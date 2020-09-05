@@ -6,6 +6,8 @@ const nav3= document.getElementById('nav-3');
 const nav4= document.getElementById('nav-4');
 const nav5= document.getElementById('nav-5');
 const navItems=[nav1, nav2, nav3, nav4, nav5];
+const buttonAtEndPage = document.getElementById('but-contact');
+const contactDetails = document.getElementById('contact-details')
 
 // control nav animation
 function navAnimation(direction1, direction2){
@@ -32,8 +34,14 @@ function toggleNav(){
     }
 }
 
+function hide() {
+    buttonAtEndPage.style.display = 'none';
+    contactDetails.hidden = false
+}
+
 //Event Listners
 menuBars.addEventListener('click', toggleNav);
 navItems.forEach((nav)=>{
     nav.addEventListener('click', toggleNav)
 })
+buttonAtEndPage.addEventListener('click', hide);

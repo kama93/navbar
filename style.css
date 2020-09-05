@@ -11,6 +11,7 @@ html {
 }
 
 body {
+  width: 100%;
   margin: 0;
   background: white;
   font-family: 'Poiret One', cursive !important;
@@ -67,42 +68,14 @@ nav li a{
   display: block;
   text-align: center
 }
-nav li a:hover{
-  transform: scale(1.2);
-}
 
-nav li a::before{
-  content: "";
-  width: 25vw; 
-  height: 3px;
-  background-color: white;
-  position: absolute;
-  top: 47.5%;
-  left: 0;
-  opacity: 0;
-}
-
-nav li a:hover::before{
-  opacity: 1;
-}
-
-.about{
-color:var(--navColor2)
-}
-
-.cv{
-  color:var(--navColor1)
-}
-.projects{
+.projects, .about, .contact, .projects:hover, .about:hover, .contact:hover {
   color:var(--navColor2)
-  }
+}
   
-.zeroToMastery{
+.zeroToMastery, .cv, .zeroToMastery:hover, .cv:hover{
     color:var(--navColor1)
-  }
-.contact{
-    color:var(--navColor2)
-    }
+}
 
 nav li:nth-of-type(1){
   background-color: var(--navColor1);
@@ -266,20 +239,20 @@ section#about {
 section#skills {
   background-color: var(--navColor1);
   color: var(--navColor2);
-  display: grid;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 section#projects {
-
+  height: 200vh;
   background-color: var(--navColor2);
   color: var(--navColor1);
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column
-
+  flex-direction: column;
 }
 
 section#contact {
@@ -287,46 +260,24 @@ section#contact {
   
 }
 
+section#projects a{
+  color: var(--navColor1)
+}
+
+/* My projects section */
+
 .myprojects-title{
   font-size: 50px
 }
 
+/* container for images */
 .projects-my{
   display: flex;
   flex-direction: row;
 }
-.face-container{
-  height: auto;
-  width: 550px;
-display: flex;
-text-align: center;
-justify-content: center;
-}
-
-.js-projects{
-  display: flex;
-  flex-direction: row;
-
-}
-
-.projects-zero{
-  display: flex;
-  flex-direction: column
-}
-
-.projects-zero img{
-  margin-bottom: 10px;
-  margin: 10px;
-}
-
-.projects-zero .container{
-  height: 200px;
-  width: 400px
-}
 
 img{
   margin-bottom: 30px;
-  margin: 10px;
   height:250px;
   width:auto;
 }
@@ -334,6 +285,8 @@ img{
 .footer{
   margin-top: 50px;
 }
+
+/* For overlay effect */
 
 .image {
   opacity: 1;
@@ -355,9 +308,6 @@ img{
 
 .container {
   position: relative;
-  margin-bottom: 30px;
-  margin: 10px;
-  margin-right: 30px;
 }
 
 .container:hover .image {
@@ -370,30 +320,34 @@ img{
   cursor: pointer;
 }
 
-
+/* container for image + footer */
 .fit{
   width:100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
 }
 
-.container img{
-  width: auto
+/* Section zero to mastery projects */
+
+.zero-mastery-projects-container{
+  margin: 10px, 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 0.3fr);
+  grid-template-rows: repeat(4, 0.3fr);
 }
 
 .zero-image{
-  height:430px;
+  height: 13rem;
   width: auto;
-  margin-right: 20px;
-  margin-left: 20px
-
+  border-radius: 20px
 }
 
+.footer-zero h3, .footer-zero i{
+  font-size: 15px;
+  margin-top:10px
+}
 
+/* Section cv */
 .container-cv-contact{
   display:flex;
   flex-direction: row;
@@ -411,13 +365,14 @@ img{
   width: 50%;
 }
 
+/* Section contact */
+
 .contact-side{
   display:flex;
   justify-content: center;
   align-items: center;
   background-color: var(--navColor1);
   width: 50%;
- 
 }
 
 .button{
@@ -432,6 +387,10 @@ img{
   letter-spacing: 3px
 }
 
+.button:focus {
+  outline: none;
+}
+
 .but-about{
   background-color:var(--navColor2);
   border-color: var(--navColor1);
@@ -444,113 +403,81 @@ img{
   color: var(--navColor2);
 }
 
-.but-about:hover{
+#contact-details p{
+  font-size: 20px
+}
+
+.but-about:hover, .but-contact:hover{
   height:250px;
   border-radius: 10%;
 }
 
-.but-contact:hover{
-  height:250px;
-  border-radius: 10%;
+a, a:visited, a:hover, a:focus {
+  text-decoration: none;
+  outline: none;
 }
-
-a {
-  text-decoration: none
-}
-
-a:visited{
-  text-decoration: none
-}
-
-section#projects a{
-  color: var(--navColor1)
-}
-
-.zero-container-images{
-  height:200px
-}
-
-.zero-container{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width:100%;
-  height: 100%;
-}
-
-
-
 
 /* Media Query: Large Smartphone (Vertical) */
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   section#home a {
     top: 1rem;
     left: 1rem;
   }
-
-  .menu-bars {
+  .menu-bars { 
     top: 0.5rem;
     right: 1rem;
+  } 
+  .title{
+    text-align: center
   }
-   
+  .projects-my, .zero-mastery-projects-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px, 5px
+  }
+  .fit{
+    padding:3px
+  }
+  .zero-image{
+    height: auto;
+    width: 100%;
+    border-radius: 20px
+  }
   
-}
-
-
-.pic-ctn {
-  width: 100vw;
-  height: 200px;
-}
-
-@keyframes display {
-  0% {
-    transform: translateX(200px);
-    opacity: 0;
+  .footer-zero h3, .footer-zero i{
+    font-size: 13px;
+    margin-top:8px
   }
-  10% {
-    transform: translateX(0);
-    opacity: 1;
+  section#projects, section#skills, section#about{
+    height:auto
   }
-  20% {
-    transform: translateX(0);
-    opacity: 1;
+  .myprojects-title, .description-title{
+    font-size: 30px;
+    margin: 20px;
+    text-align: center
   }
-  30% {
-    transform: translateX(-200px);
-    opacity: 0;
+  .description{
+    font-size: 15px;
+    margin:20px
   }
-  100% {
-    transform: translateX(-200px);
-    opacity: 0;
+  .button{
+    height:150px;
+    width:150px;
   }
-}
-
-.pic-ctn {
-  position: relative;
-  width: 100vw;
-  height: 300px;
-  margin-top: 15vh;
-}
-
-.pic-ctn > img {
-  position: absolute;
-  top: 0;
-  left: calc(50% - 100px);
-  opacity: 0;
-  animation: display 10s infinite;
-}
-
-img:nth-child(2) {
-  animation-delay: 2s;
-}
-img:nth-child(3) {
-  animation-delay: 4s;
-}
-img:nth-child(4) {
-  animation-delay: 6s;
-}
-img:nth-child(5) {
-  animation-delay: 8s;
+  button p, button h1{
+    font-size: 15px;
+  }
+  .contact-side, .cv-side{
+    width: 100%;
+    height: 100%
+  }
+  .container-cv-contact{
+    flex-direction: column
+  }
+  #contact-details p{
+    font-size: 15px
+  }
 }
 

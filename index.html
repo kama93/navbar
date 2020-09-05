@@ -7,8 +7,9 @@
   <title>Kamila Burzynska</title>
   <link rel="icon" type="image/png" href="k.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 
 <body>
@@ -17,7 +18,7 @@
     <!-- Menu Items -->
     <nav>
       <ul>
-        <li id='nav-3' class="slide-out-3"><a href="#skills" class='projects'>My own projrcts</a></li>
+        <li id='nav-3' class="slide-out-3"><a href="#skills" class='projects'>My own projects</a></li>
         <li id='nav-4' class="slide-out-4"><a href="#projects" class='zeroToMastery'>Projects from Zero to Mastery
             Tutorial</a></li>
         <li id='nav-1' class="slide-out-1"><a href="#about" class='about'>About me...</a></li>
@@ -36,7 +37,7 @@
   </div>
   <!-- Sections -->
   <section id="home">
-    <h1>Kamila Burzynska</h1>
+    <h1 class="title">Kamila Burzynska</h1>
     <p></p>
   </section>
   <section id="skills">
@@ -82,9 +83,8 @@
   </section>
   <section id="projects">
     <h1 class="myprojects-title">Zero to mastery projects</h1>
- <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-        <div class="carousel-inner">
-      <div class="carousel-item active fit">
+    <div class="zero-mastery-projects-container">
+      <div class="fit">
         <div class="container">
           <a href="https://stormy-sea-30325.herokuapp.com/"><img src="face.png" alt="Project main page photo"
               class="image d-block zero-image"></a>
@@ -92,155 +92,148 @@
             <div class="text">Bla, bla...</div>
           </div>
         </div>
-        <div class="footer">
+        <div class="footer-zero">
           <a href="https://stormy-sea-30325.herokuapp.com/">
             <h3>Go to website</h3>
           </a>
           <i class="fab fa-github"></i>
         </div>
       </div>
-      <div class="carousel-item fit">
+      <div class="fit">
         <div class="container">
           <img src="bookmark.png" alt="Project main page photo" class="image zero-image">
           <div class="middle">
             <div class="text">Bla, bla...</div>
           </div>
         </div>
-        <div class="footer">
+        <div class="footer-zero">
           <h3>Go to website</h3>
           <i class="fab fa-github"></i>
         </div>
       </div>
-      <div class="carousel-item fit">
+      <div class=" fit">
         <div class="container">
           <img src="calculator.png" alt="Project main page photo" class="image zero-image">
           <div class="middle">
             <div class="text">Bla, bla...</div>
           </div>
         </div>
-        <div class="footer">
+        <div class="footer-zero">
           <h3>Go to website</h3>
           <i class="fab fa-github"></i>
         </div>
       </div>
-      <div class="carousel-item fit">
+      <div class=" fit">
         <div class="container">
           <img src="countdown.png" alt="Project main page photo" class="image zero-image">
           <div class="middle">
             <div class="text">Bla, bla...</div>
           </div>
         </div>
-        <div class="footer">
+        <div class="footer-zero">
           <h3>Go to website</h3>
           <i class="fab fa-github"></i>
         </div>
       </div>
-      <div class="carousel-item fit">
+      <div class="fit">
         <div class="container">
           <img src="drag-and-drop.png" alt="Project main page photo" class="image zero-image">
           <div class="middle">
             <div class="text">Bla, bla...</div>
           </div>
         </div>
-        <div class="footer">
+        <div class="footer-zero">
           <h3>Go to website</h3>
           <i class="fab fa-github"></i>
         </div>
       </div>
-      <div class="carousel-item fit">
+      <div class="fit">
         <div class="container">
           <img src="form-validator.png" alt="Project main page photo" class="image zero-image">
           <div class="middle">
             <div class="text">Bla, bla...</div>
           </div>
         </div>
-        <div class="footer">
+        <div class="footer-zero">
           <h3>Go to website</h3>
           <i class="fab fa-github"></i>
         </div>
       </div>
-      <div class="carousel-item fit">
+      <div class="fit">
         <div class="container">
           <img src="joke-teller.png" alt="Project main page photo" class="image zero-image">
           <div class="middle">
             <div class="text">Bla, bla...</div>
           </div>
         </div>
-        <div class="footer">
+        <div class="footer-zero">
           <h3>Go to website</h3>
           <i class="fab fa-github"></i>
         </div>
       </div>
-      <div class="carousel-item fit">
+      <div class="fit">
         <div class="container">
           <img src="light-dark-mode.png" alt="Project main page photo" class="image zero-image">
           <div class="middle">
             <div class="text">Bla, bla...</div>
           </div>
         </div>
-        <div class="footer">
+        <div class="footer-zero">
           <h3>Go to website</h3>
           <i class="fab fa-github"></i>
         </div>
       </div>
-      <div class="carousel-item fit">
+      <div class="fit">
         <div class="container">
           <img src="music-player.png" alt="Project main page photo" class="image zero-image">
           <div class="middle">
             <div class="text">Bla, bla...</div>
           </div>
         </div>
-        <div class="footer">
+        <div class="footer-zero">
           <h3>Go to website</h3>
           <i class="fab fa-github"></i>
         </div>
       </div>
-      <div class="carousel-item fit">
+      <div class="fit">
         <div class="container">
           <img src="nasa.png" alt="Project main page photo" class="image zero-image">
           <div class="middle">
             <div class="text">Bla, bla...</div>
           </div>
         </div>
-        <div class="footer">
+        <div class="footer-zero">
           <h3>Go to website</h3>
           <i class="fab fa-github"></i>
         </div>
       </div>
-      <div class="carousel-item fit">
+      <div class="fit">
         <div class="container">
           <img src="picture-in-picture.png" alt="Project main page photo" class="image zero-image">
           <div class="middle">
             <div class="text">Bla, bla...</div>
           </div>
         </div>
-        <div class="footer">
+        <div class="footer-zero">
           <h3>Go to website</h3>
           <i class="fab fa-github"></i>
         </div>
       </div>
-      <div class="carousel-item fit">
+      <div class="fit">
         <div class="container">
           <img src="rock-paper.png" alt="Project main page photo" class="image zero-image">
           <div class="middle">
             <div class="text">Bla, bla...</div>
           </div>
         </div>
-        <div class="footer">
+        <div class="footer-zero">
           <h3>Go to website</h3>
           <i class="fab fa-github"></i>
         </div>
       </div>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-  </div> 
+    </div>
+    </div>
     </div>
   </section>
   <section id="about">
@@ -266,16 +259,26 @@
           <p>Check more?</p>
           <h1>CV</h1>
         </button></div>
-      <div class="contact-side"><button class="button but-contact">
+      <div class="contact-side"><button class="button but-contact" id="but-contact">
+        <div class="button-first-view"> 
           <p>Intereted?</p>
           <h1>Contact Me</h1>
-        </button></div>
+        </div>
+        </button>
+        <div id="contact-details" hidden><p>Email: kamilaszabela@gmail.com</br>Phone number: 07462602755</p></div>
+      </div>
     </div>
   </section>
   <!-- Script -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
   <script src="script.js"></script>
 
 </body>

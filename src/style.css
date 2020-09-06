@@ -245,6 +245,10 @@ section#skills {
   align-items: center;
 }
 
+section#skills a{
+  color: var(--navColor2);
+}
+
 section#projects {
   height: 200vh;
   background-color: var(--navColor2);
@@ -253,6 +257,9 @@ section#projects {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+section#projects a{
+  color: var(--navColor1);
 }
 
 section#contact {
@@ -311,7 +318,7 @@ img{
 }
 
 .container:hover .image {
-  opacity: 0.3;
+  opacity: 0.1;
   cursor: pointer;
 }
 
@@ -342,9 +349,14 @@ img{
   border-radius: 20px
 }
 
-.footer-zero h3, .footer-zero i{
+.footer-zero h3 {
   font-size: 15px;
   margin-top:10px
+}
+
+.footer-zero i, .footer i{
+  font-size: 25px;
+  margin-top:5px
 }
 
 /* Section cv */

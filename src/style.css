@@ -239,6 +239,10 @@ section#about {
   background-color: var(--navColor1);
 }
 
+section#about a {
+  color: var(--navColor2);
+}
+
 section#skills {
   background-color: var(--navColor1);
   color: var(--navColor2);
@@ -253,7 +257,7 @@ section#skills a{
 }
 
 section#projects {
-  height: 200vh;
+  height: 230vh;
   background-color: var(--navColor2);
   color: var(--navColor1);
   display: flex;
@@ -360,7 +364,7 @@ img{
 }
 
 .zero-image{
-  height: 13rem;
+  height: 14rem;
   width: auto;
   border-radius: 20px
 }
@@ -495,6 +499,9 @@ a, a:visited, a:hover, a:focus {
   .description{
     font-size: 15px;
     margin:5px
+  }
+  .my-description, .fit{
+    margin: 10px
   }
   .button{
     height:150px;

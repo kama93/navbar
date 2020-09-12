@@ -5,11 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kamila Burzynska</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="k.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -18,12 +16,13 @@
     <!-- Menu Items -->
     <nav>
       <ul>
-        <li id='nav-3' class="slide-out-3"><a href="#skills" class='projects'>My own projects</a></li>
-        <li id='nav-4' class="slide-out-4"><a href="#projects" class='zeroToMastery'>Projects from Zero to Mastery
+        <li id='nav-3' class="slide-out-3 scroll-a"><a href="#skills" class='projects'>My own projects</a></li>
+        <li id='nav-4' class="slide-out-4 scroll-a"><a href="#projects" class='zeroToMastery'>Projects from Zero to
+            Mastery
             Tutorial</a></li>
-        <li id='nav-1' class="slide-out-1"><a href="#about" class='about'>About me...</a></li>
-        <li id='nav-2' class="slide-out-2"><a href="#contact" class='cv'>CV</a></li>
-        <li id='nav-5' class="slide-out-5"><a href="#contact" class='contact'>Contact details</a></li>
+        <li id='nav-1' class="slide-out-1 scroll-a"><a href="#about" class='about'>About me...</a></li>
+        <li id='nav-2' class="slide-out-2 scroll-a"><a href="#contact" class='cv'>CV</a></li>
+        <li id='nav-5' class="slide-out-5 scroll-a"><a href="#contact" class='contact'>Contact details</a></li>
       </ul>
     </nav>
   </div>
@@ -38,6 +37,10 @@
   <!-- Sections -->
   <section id="home">
     <h1 class="title">Kamila Burzynska</h1>
+    <div class="scroll">
+      <p>Scroll down</p>
+      <i class="fas fa-chevron-down"></i>
+    </div>
     <p></p>
   </section>
   <section id="skills">
@@ -49,13 +52,14 @@
             <img src="fit.png" alt="Project main page photo" class="image" style="width:100%">
             <div class="middle">
               <div class="text">This app lets you check you bmi and caloric intake. You can also check healty meal
-                recipes and track your progress.</div>
+                recipes and track your fitness level.</div>
             </div>
           </div>
         </a>
         <div class="footer">
           <a href="http://fit.kamilaburzynska.com/">
-          <h3>Go to website</h3></a>
+            <h3>Go to website</h3>
+          </a>
           <a href="https://github.com/kama93/fit">
             <i class="fab fa-github github"></i>
           </a>
@@ -85,7 +89,7 @@
           <div class="container">
             <img src="drums.png" alt="Project main page photo" class="image" style="width:100%">
             <div class="middle">
-              <div class="text">This on is only to show my progress. Its was my first react App and I created that 3/4
+              <div class="text">This one is only to show my progress. Its was my first react App and I created that 3/4
                 months before Fit App.</div>
             </div>
           </div>
@@ -118,6 +122,24 @@
             <h3>Go to website</h3>
           </a>
           <a href="https://github.com/kama93/face">
+            <i class="fab fa-github github"></i>
+          </a>
+        </div>
+      </div>
+      <div class="fit">
+        <a href="http://robots.kamilaburzynska.com/">
+          <div class="container">
+            <img src="robots.png" alt="Project main page photo" class="image zero-image">
+            <div class="middle">
+              <div class="text">Check robots catalog.</div>
+            </div>
+          </div>
+        </a>
+        <div class="footer-zero">
+          <a href="http://robots.kamilaburzynska.com/">
+            <h3>Go to website</h3>
+          </a>
+          <a href="https://github.com/kama93/robots">
             <i class="fab fa-github github"></i>
           </a>
         </div>
@@ -285,24 +307,6 @@
         </div>
       </div>
       <div class="fit">
-        <a href="http://byte-size.kamilaburzynska.com/picture_in_picture/">
-          <div class="container">
-            <img src="picture-in-picture.png" alt="Project main page photo" class="image zero-image">
-            <div class="middle">
-              <div class="text">Secret window...</div>
-            </div>
-          </div>
-        </a>
-        <div class="footer-zero">
-          <a href="http://byte-size.kamilaburzynska.com/picture_in_picture/">
-            <h3>Go to website</h3>
-          </a>
-          <a href="https://github.com/kama93/byte-size-projects/tree/master/src/picture_in_picture">
-            <i class="fab fa-github github"></i>
-          </a>
-        </div>
-      </div>
-      <div class="fit">
         <a href="http://byte-size.kamilaburzynska.com/spock-rock-game/">
           <div class="container">
             <img src="rock-paper.png" alt="Project main page photo" class="image zero-image">
@@ -327,27 +331,38 @@
   </section>
   <section id="about">
     <div class="my-description">
-      <h1 class="description-title">About me...</h1>
-      <p class="description">I started my programming learning last year, but from March I started spend most of my time
-        on that. I mainly use React library to build my projects and of course because of that also JS, HTML and CSS.
-        I’m not only learning front-end side but also on back-end(working on NodeJs and PostgreSQL) I’m looking to be
-        full stack developer. I really enjoying learning all of the new things, but most I enjoy creating real projects.
-        Before I wasn’t connected with IT, I was studying veterinary medicine and I was working for almost 2 years as
-        clinicians. I feel that this work gave me strong soft skills like working under a pressure, deal with deadlines,
-        thinking out of box. More over is was working both as a single (face to face with client, taking all decisions
-        by myself), but also in the group of people.
-        But since last year I starts to more and more enjoy programming and creative, logic side of that and decided to
-        take step back from veterinary industry and try myself in web developer path as is more fascinating and giving
-        more possibilities of development. I also believe that IT if feature of most of dziedzinach Lycia so I want to
-        be part of it. </p>
+      <h1 class="description-title">Hi, I'm Kamila</h1>
+        <p class="description">I'm a veterinary surgeon pursuing career in web development</p>
+        <p class="description">I started my journey with software development a year ago</p>
+        <p class="description">
+          At first it was mostly driven by curiosity, but then I grew to like it
+          so much that I decided to give up my current position as a veterinary surgeon and
+          pursue a career in software.   
+        </p>
+        <p class="description">
+          I believe in learning through practice so I started watching online tutorials
+          and created applications like 
+          <a href='http://fit.kamilaburzynska.com'>Fit</a> or 
+          <a href="http://movie.kamilaburzynska.com">Movies</a> that you can learn
+          more about in the <a href="#skills">My Projects</a> section
+        </p>
+        <p  class="description">
+          I'm a hard working, open minded and curious person. 
+          I believe software is going to continue revolutionising the world
+          and I want to be a part of it.
+        </p>
     </div>
   </section>
   <section id="contact">
     <div class="container-cv-contact">
-      <div class="cv-side"><button class="button but-about">
-          <p>Check more?</p>
-          <h1>CV</h1>
-        </button></div>
+      <div class="cv-side">
+        <a href='https://github.com/kama93/MyCV/raw/master/BurzynskaCV.pdf'>
+          <button class="button but-about">
+            <p>Check more?</p>
+            <h1>CV</h1>
+          </button>
+        </a>
+      </div>
       <div class="contact-side"><button class="button but-contact" id="but-contact">
           <div class="button-first-view">
             <p>Intereted?</p>

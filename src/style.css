@@ -197,6 +197,11 @@ nav li:nth-of-type(5){
   line-height: 30px
 }
 
+.github-container{
+  display: flex;
+  flex-direction: row;
+}
+
 /* --- Sections ------------------------------------ */
 
 section {
@@ -255,7 +260,7 @@ section#skills a{
 }
 
 section#projects {
-  height: 230vh;
+  height: 240vh;
   background-color: var(--navColor2);
   color: var(--navColor1);
   display: flex;

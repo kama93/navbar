@@ -4,404 +4,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kamila Burzynska</title>
+  <title>Animated Navigation</title>
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="k.png">
 </head>
 
 <body>
-  <!-- Menu Overlay -->
-  <div class="overlay overlay-slide-left" id="overlay">
-    <!-- Menu Items -->
-    <nav>
-      <ul>
-        <li id='nav-3' class="slide-out-3 scroll-a"><a href="#skills" class='projects'>My own projects</a></li>
-        <li id='nav-4' class="slide-out-4 scroll-a"><a href="#projects" class='zeroToMastery'>Projects from Zero to
-            Mastery
-            Tutorial</a></li>
-        <li id='nav-1' class="slide-out-1 scroll-a"><a href="#about" class='about'>About me...</a></li>
-        <li id='nav-2' class="slide-out-2 scroll-a"><a href="#contact" class='cv'>CV</a></li>
-        <li id='nav-5' class="slide-out-5 scroll-a"><a href="#contact" class='contact'>Contact details</a></li>
-      </ul>
-    </nav>
+  <div class="topnav" id="main-menu">
+    <a>Visual Language</a>
+    <a href="#components" id="comp">Components</a>
+    <div class="dropdown" id="comp1">
+      <button class="dropbtn">Components 1
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#">Action</a>
+        <a href="#">Another action</a>
+        <a href="#">Something else</a>
+      </div>
+    </div>
+    <a href="#components2" id="comp2">Components 2</a>
+    <a href="#components3" id="comp3">Components 3</a>
+    <div class="dropdown" id="comp4">
+      <button class="dropbtn">Components 4
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#">Action</a>
+        <a href="#">Another action</a>
+        <a href="#">Something else</a>
+      </div>
+    </div>
+    <a id="comp5" href="#components5">Components 5</a>
+    <a id="comp6" href="#components6">Components 6</a>
+    <div class="dropdown" id="show-more">
+      <button class="dropbtn">Show More
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content" id="drop-adds">
+      </div>
+    </div>
   </div>
-  <!-- Menu bars -->
-  <div class="menu-bars" id="menu-bars">
-    <div class="bar1"></div>
-    <div class="bar2"></div>
-    <div class="bar3"></div>
-    <div class="bar4"></div>
-    <div class="bar5"></div>
-  </div>
-  <!-- Sections -->
-  <section id="home">
-    <h1 class="title">Kamila Burzynska</h1>
-    <div class="scroll">
-      <p>Scroll down</p>
-      <i class="fas fa-chevron-down"></i>
-    </div>
-    <p></p>
-  </section>
-  <section id="skills">
-    <h1 class="myprojects-title">My Projects</h1>
-    <div class="projects-my">
-      <div class="fit">
-        <a href="http://fit.kamilaburzynska.com/">
-          <div class="container">
-            <img src="fit.png" alt="Project main page photo" class="image" style="width:100%">
-            <div class="middle">
-              <div class="text">Lets you check you BMI and caloric intake. You can also check healty meal
-                recipes and track your fitness level.</div>
-            </div>
-          </div>
-        </a>
-        <div class="footer">
-          <a href="http://fit.kamilaburzynska.com/">
-            <h3>Go to website</h3>
-          </a>
-          <a href="https://github.com/kama93/fit">
-            <i class="fab fa-github github"></i>
-            <p>GitHub</p>
-          </a>
-        </div>
-      </div>
-      <div class="fit">
-        <a href="http://movie.kamilaburzynska.com/">
-          <div class="container">
-            <img src="movie.png" alt="Project main page photo" class="image" style="width:100%">
-            <div class="middle">
-              <div class="text">Displays movies by genres and makes movie recommendations (check out the joker and fav. section).</div>
-            </div>
-          </div>
-        </a>
-        <div class="footer">
-          <a href="http://movie.kamilaburzynska.com/">
-            <h3>Go to website</h3>
-          </a>
-          <a href="https://github.com/kama93/movies">
-            <i class="fab fa-github github"></i>
-            <p>GitHub</p>
-          </a>
-        </div>
-      </div>
-      <div class="fit">
-        <a href="http://drums.kamilaburzynska.com/">
-          <div class="container">
-            <img src="drums.png" alt="Project main page photo" class="image" style="width:100%">
-            <div class="middle">
-              <div class="text">The first app I wrote myself. Included here for comparison with more mature projects like "fit app".
-              </div>
-            </div>
-          </div>
-        </a>
-        <div class="footer">
-          <a href="http://drums.kamilaburzynska.com/">
-            <h3>Go to website</h3>
-          </a>
-          <a href="https://github.com/kama93/drums">
-            <i class="fab fa-github github"></i>
-            <p>GitHub</p>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="projects">
-    <h1 class="myprojects-title">Zero to mastery projects</h1>
-    <div class="zero-mastery-projects-container">
-      <div class="fit">
-        <a href="http://face.kamilaburzynska.com/">
-          <div class="container">
-            <img src="face.png" alt="Project main page photo" class="image d-block zero-image">
-            <div class="middle">
-              <div class="text">This app was created during tutorial. It's finding faces on photos.</div>
-            </div>
-          </div>
-        </a>
-        <div class="footer-zero">
-          <a href="http://face.kamilaburzynska.com/">
-            <h3>Go to website</h3>
-          </a>
-          <a href="https://github.com/kama93/face">
-            <i class="fab fa-github github"></i>
-            <p>GitHub</p>
-          </a>
-        </div>
-      </div>
-      <div class="fit">
-        <a href="http://robots.kamilaburzynska.com/">
-          <div class="container">
-            <img src="robots.png" alt="Project main page photo" class="image zero-image">
-            <div class="middle">
-              <div class="text">Check robots catalog.</div>
-            </div>
-          </div>
-        </a>
-        <div class="footer-zero">
-          <a href="http://robots.kamilaburzynska.com/">
-            <h3>Go to website</h3>
-          </a>
-          <a href="https://github.com/kama93/robots">
-            <i class="fab fa-github github"></i>
-            <p>GitHub</p>
-          </a>
-        </div>
-      </div>
-      <div class="fit">
-        <a href="http://byte-size.kamilaburzynska.com/book-keeper/">
-          <div class="container">
-            <img src="bookmark.png" alt="Project main page photo" class="image zero-image">
-            <div class="middle">
-              <div class="text">Vanilla JS app that lets you create bookmarks for your fav apps.</div>
-            </div>
-          </div>
-        </a>
-        <div class="footer-zero">
-          <a href="http://byte-size.kamilaburzynska.com/book-keeper/">
-            <h3>Go to website</h3>
-          </a>
-          <a href="https://github.com/kama93/byte-size-projects/tree/master/src/book-keeper">
-            <i class="fab fa-github github"></i>
-            <p>GitHub</p>
-          </a>
-        </div>
-      </div>
-      <div class=" fit">
-        <a href="http://byte-size.kamilaburzynska.com/calculator/">
-          <div class="container">
-            <img src="calculator.png" alt="Project main page photo" class="image zero-image">
-            <div class="middle">
-              <div class="text">Calculator - nothing more, nothing less</div>
-            </div>
-          </div>
-        </a>
-        <div class="footer-zero">
-          <a href="http://byte-size.kamilaburzynska.com/calculator/">
-            <h3>Go to website</h3>
-          </a>
-          <a href="https://github.com/kama93/byte-size-projects/tree/master/src/calculator">
-            <i class="fab fa-github github"></i>
-            <p>GitHub</p>
-          </a>
-        </div>
-      </div>
-      <div class=" fit">
-        <a href="http://byte-size.kamilaburzynska.com/custom-countdown/">
-          <div class="container">
-            <img src="countdown.png" alt="Project main page photo" class="image zero-image">
-            <div class="middle">
-              <div class="text">Time Counter.</div>
-            </div>
-          </div>
-        </a>
-        <div class="footer-zero">
-          <a href="http://byte-size.kamilaburzynska.com/custom-countdown/">
-            <h3>Go to website</h3>
-          </a>
-          <a href="https://github.com/kama93/byte-size-projects/tree/master/src/custom-countdown">
-            <i class="fab fa-github github"></i>
-            <p>GitHub</p>
-          </a>
-        </div>
-      </div>
-      <div class="fit">
-        <a href="http://byte-size.kamilaburzynska.com/drag-and-drop/">
-          <div class="container">
-            <img src="drag-and-drop.png" alt="Project main page photo" class="image zero-image">
-            <div class="middle">
-              <div class="text">Trello in 300 lines of code</div>
-            </div>
-          </div>
-        </a>
-        <div class="footer-zero">
-          <a href="http://byte-size.kamilaburzynska.com/drag-and-drop/">
-            <h3>Go to website</h3>
-          </a>
-          <a href="https://github.com/kama93/byte-size-projects/tree/master/src/drag-and-drop">
-            <i class="fab fa-github github"></i>
-            <p>GitHub</p>
-          </a>
-        </div>
-      </div>
-      <div class="fit">
-        <a href="http://byte-size.kamilaburzynska.com/form-validator/">
-          <div class="container">
-            <img src="form-validator.png" alt="Project main page photo" class="image zero-image">
-            <div class="middle">
-              <div class="text">Sign up form validation demo.</div>
-            </div>
-          </div>
-        </a>
-        <div class="footer-zero">
-          <a href="http://byte-size.kamilaburzynska.com/form-validator/">
-            <h3>Go to website</h3>
-          </a>
-          <a href="https://github.com/kama93/byte-size-projects/tree/master/src/form-validator">
-            <i class="fab fa-github github"></i>
-            <p>GitHub</p>
-          </a>
-        </div>
-      </div>
-      <div class="fit">
-        <a href="http://byte-size.kamilaburzynska.com/joke-teller/">
-          <div class="container">
-            <img src="joke-teller.png" alt="Project main page photo" class="image zero-image">
-            <div class="middle">
-              <div class="text">Source of endless dad's jokes.</div>
-            </div>
-          </div>
-        </a>
-        <div class="footer-zero">
-          <a href="http://byte-size.kamilaburzynska.com/joke-teller/">
-            <h3>Go to website</h3>
-          </a>
-          <a href="https://github.com/kama93/byte-size-projects/tree/master/src/joke-teller">
-            <i class="fab fa-github github"></i>
-            <p>GitHub</p>
-          </a>
-        </div>
-      </div>
-      <div class="fit">
-        <a href="http://byte-size.kamilaburzynska.com/light-dark-mode/">
-          <div class="container">
-            <img src="light-dark-mode.png" alt="Project main page photo" class="image zero-image">
-            <div class="middle">
-              <div class="text">Light/Dark Mode.</div>
-            </div>
-          </div>
-        </a>
-        <div class="footer-zero">
-          <a href="http://byte-size.kamilaburzynska.com/light-dark-mode/">
-            <h3>Go to website</h3>
-          </a>
-          <a href="https://github.com/kama93/byte-size-projects/tree/master/src/light-dark-mode">
-            <i class="fab fa-github github"></i>
-            <p>GitHub</p>
-          </a>
-        </div>
-      </div>
-      <div class="fit">
-        <a href="http://byte-size.kamilaburzynska.com/music-player/">
-          <div class="container">
-            <img src="music-player.png" alt="Project main page photo" class="image zero-image">
-            <div class="middle">
-              <div class="text">My custom music player.</div>
-            </div>
-          </div>
-        </a>
-        <div class="footer-zero">
-          <a href="http://byte-size.kamilaburzynska.com/music-player/">
-            <h3>Go to website</h3>
-          </a>
-          <a href="https://github.com/kama93/byte-size-projects/tree/master/src/music-player">
-            <i class="fab fa-github github"></i>
-            <p>GitHub</p>
-          </a>
-        </div>
-      </div>
-      <div class="fit">
-        <a href="http://byte-size.kamilaburzynska.com/nasa-apod/">
-          <div class="container">
-            <img src="nasa.png" alt="Project main page photo" class="image zero-image">
-            <div class="middle">
-              <div class="text">Go to the stars with NASA API.</div>
-            </div>
-          </div>
-        </a>
-        <div class="footer-zero">
-          <a href="http://byte-size.kamilaburzynska.com/nasa-apod/">
-            <h3>Go to website</h3>
-          </a>
-          <a href="https://github.com/kama93/byte-size-projects/tree/master/src/nasa-apod">
-            <i class="fab fa-github github"></i>
-            <p>GitHub</p>
-          </a>
-        </div>
-      </div>
-      <div class="fit">
-        <a href="http://byte-size.kamilaburzynska.com/spock-rock-game/">
-          <div class="container">
-            <img src="rock-paper.png" alt="Project main page photo" class="image zero-image">
-            <div class="middle">
-              <div class="text">Let's play with Spock.</div>
-            </div>
-          </div>
-        </a>
-        <div class="footer-zero">
-          <a href="http://byte-size.kamilaburzynska.com/spock-rock-game/">
-            <h3>Go to website</h3>
-          </a>
-          <a href="https://github.com/kama93/byte-size-projects/tree/master/src/spock-rock-game">
-            <i class="fab fa-github github"></i>
-            <p>GitHub</p>
-          </a>
-        </div>
-      </div>
-    </div>
-    </div>
-    </div>
-    </div>
-  </section>
-  <section id="about">
-    <div class="my-description">
-      <h1 class="description-title">Hi, I'm Kamila</h1>
-        <p class="description">I'm a veterinary surgeon pursuing career in web development</p>
-        <p class="description">I started my journey with software development a year ago</p>
-        <p class="description">
-          At first it was mostly driven by curiosity, but then I grew to like it
-          so much that I decided to give up my current position as a veterinary surgeon and
-          pursue a career in software.   
-        </p>
-        <p class="description">
-          I believe in learning through practice so I started watching online tutorials
-          and created applications like 
-          <a href='http://fit.kamilaburzynska.com'>Fit</a> or 
-          <a href="http://movie.kamilaburzynska.com">Movies</a> that you can learn
-          more about in the <a href="#skills">My Projects</a> section
-        </p>
-        <p  class="description">
-          I'm a hard working, open minded and curious person. 
-          I believe software is going to continue revolutionising the world
-          and I want to be a part of it.
-        </p>
-    </div>
-  </section>
-  <section id="contact">
-    <div class="container-cv-contact">
-      <div class="cv-side">
-        <a href='https://github.com/kama93/MyCV/raw/master/burzynska-kamila-cv.pdf'>
-          <button class="button but-about">
-            <p>Check more?</p>
-            <h1>CV</h1>
-          </button>
-        </a>
-      </div>
-      <div class="contact-side"><button class="button but-contact" id="but-contact">
-          <div class="button-first-view">
-            <p>Intereted?</p>
-            <h1>Contact Me</h1>
-          </div>
-        </button>
-        <div id="contact-details" hidden>
-          <p>Email: kamilaszabela@gmail.com</br>Phone number: 07462602755</p>
-        </div>
-      </div>
-    </div>
-  </section>
   <!-- Script -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"></script>
   <script src="script.js"></script>
-
 </body>
 
 </html>

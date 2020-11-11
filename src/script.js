@@ -1,13 +1,17 @@
 var component6 = document.getElementById('comp6');
 var component5 = document.getElementById('comp5');
-var component4 = document.getElementById('comp4');
 var component3 = document.getElementById('comp3');
 var component2 = document.getElementById('comp2');
-var component1 = document.getElementById('comp1');
 var component = document.getElementById('comp');
+var component1 = document.getElementById('comp1');
+var comp1Drop = document.getElementById('comp1-drop');
+var component4 = document.getElementById('comp4');
+var comp4Drop = document.getElementById('comp4-drop');
+var dropDown = document.getElementsByClassName('dropdown');
 var showMore = document.getElementById('show-more');
 var dropAdds = document.getElementById('drop-adds');
 var mainMenu = document.getElementById('main-menu');
+var buttonShowMore = document.getElementById('button-show-more');
 var arrayComponents = [];
 arrayComponents.push(component6, component5, component4, component3, component2, component1, component);
 var arrayRemove = [];
@@ -18,6 +22,12 @@ function checkSpaceSmaller(comp1) {
     showMore.style.display = "block";
     dropAdds.insertAdjacentElement('afterbegin', comp1);
     comp1.classList.add('dd-show-more');
+    if (comp1 === component4) {
+        comp4Drop.classList.remove('fade-out-top');
+    }
+    else if (comp1 === component1) {
+        comp1Drop.classList.remove('fade-out-top');
+    }
     arrayRemove.push(arrayComponents.shift());
     lastX = window.innerWidth;
 }
@@ -29,7 +39,7 @@ function checkSpaceBigger(comp1, comp2) {
         comp1.classList.remove('dd-show-more');
         arrayComponents.unshift(arrayRemove.pop());
         lastX = window.innerWidth;
-        if (dropAdds.childElementCount === 0) {
+        if (dropAdds.childElementCount < 1) {
             showMore.style.display = "none";
         }
     }
@@ -38,7 +48,10 @@ function checkSpaceBigger(comp1, comp2) {
 function nextMove() {
     // to compare if changing to larger or smaller screen
     var currentWindowWidth = window.innerWidth;
-    if (currentWindowWidth <= lastX) {
+    if (currentWindowWidth > 1200) {
+        return;
+    }
+    else if (currentWindowWidth <= lastX) {
         while (arrayComponents.length > 1) {
             var currentComp = arrayComponents[0];
             var space = window.innerWidth - currentComp.offsetLeft;
@@ -59,6 +72,50 @@ function nextMove() {
         }
     }
 }
+component1.addEventListener('mouseenter', function (e) {
+    if (arrayComponents.indexOf(component1) > -1) {
+        comp1Drop.classList.remove("fade-out-top");
+        comp1Drop.classList.add("fade-in-top");
+    }
+    else {
+        comp1Drop.style.opacity = "1";
+    }
+});
+component1.addEventListener('mouseleave', function (e) {
+    if (arrayComponents.indexOf(component1) > -1) {
+        comp1Drop.classList.remove("fade-in-top");
+        comp1Drop.classList.add("fade-out-top");
+    }
+    else {
+        comp1Drop.style.opacity = "1";
+    }
+});
+component4.addEventListener('mouseenter', function (e) {
+    if (arrayComponents.indexOf(component4) > -1) {
+        comp4Drop.classList.remove("fade-out-top");
+        comp4Drop.classList.add("fade-in-top");
+    }
+    else {
+        comp4Drop.style.opacity = "1";
+    }
+});
+component4.addEventListener('mouseleave', function (e) {
+    if (arrayComponents.indexOf(component4) > -1) {
+        comp4Drop.classList.remove("fade-in-top");
+        comp4Drop.classList.add("fade-out-top");
+    }
+    else {
+        comp4Drop.style.opacity = "1";
+    }
+});
+showMore.addEventListener('mouseenter', function (e) {
+    dropAdds.classList.remove("fade-out-top");
+    dropAdds.classList.add("fade-in-top");
+});
+showMore.addEventListener('mouseleave', function (e) {
+    dropAdds.classList.remove("fade-in-top");
+    dropAdds.classList.add("fade-out-top");
+});
 // checking if mobile 
 var isMobile = false;
 // device detection
@@ -73,7 +130,24 @@ if (isMobile) {
         dropAdds.appendChild(arrayComponents[i]);
         arrayComponents[i].classList.add('dd-show-more');
     }
+    showMore.addEventListener('mouseenter', function (e) {
+        dropAdds.classList.remove("slide-out-left");
+        dropAdds.classList.add("slide-in-left");
+    });
+    showMore.addEventListener('mouseleave', function (e) {
+        dropAdds.classList.remove("slide-in-left");
+        dropAdds.classList.add("slide-out-left");
+    });
 }
+var font2 = document.getElementById('font-second');
+showMore.addEventListener('mouseenter', function (e) {
+    font2.classList.remove("fa-sort-amount-up-alt");
+    font2.classList.add("fa-sort-amount-down-alt");
+});
+showMore.addEventListener('mouseleave', function (e) {
+    font2.classList.remove("fa-sort-amount-down-alt");
+    font2.classList.add("fa-sort-amount-up-alt");
+});
 // detection of window size changes
 window.onresize = nextMove;
 // for start 

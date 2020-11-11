@@ -1,13 +1,17 @@
 const component6: HTMLElement | null = document.getElementById('comp6');
 const component5: HTMLElement | null = document.getElementById('comp5');
-const component4: HTMLElement | null = document.getElementById('comp4');
 const component3: HTMLElement | null = document.getElementById('comp3');
 const component2: HTMLElement | null = document.getElementById('comp2');
-const component1: HTMLElement | null = document.getElementById('comp1');
 const component: HTMLElement | null = document.getElementById('comp');
+const component1 = document.getElementById('comp1')!;
+const comp1Drop = document.getElementById('comp1-drop')!;
+const component4 = document.getElementById('comp4')!;
+const comp4Drop = document.getElementById('comp4-drop')!;
+const dropDown = document.getElementsByClassName('dropdown')
 const showMore = document.getElementById('show-more')!;
-const dropAdds= document.getElementById('drop-adds')!;
+const dropAdds = document.getElementById('drop-adds')!;
 const mainMenu = document.getElementById('main-menu')!;
+const buttonShowMore = document.getElementById('button-show-more')!;
 
 let arrayComponents: any[] = []
 arrayComponents.push(component6, component5, component4, component3, component2, component1, component)
@@ -21,6 +25,12 @@ function checkSpaceSmaller(comp1: HTMLElement) {
     showMore.style.display = "block";
     dropAdds.insertAdjacentElement('afterbegin', comp1)
     comp1.classList.add('dd-show-more')
+    if (comp1 === component4) {
+        comp4Drop.classList.remove('fade-out-top')
+    }
+    else if (comp1 === component1) {
+        comp1Drop.classList.remove('fade-out-top')
+    }
     arrayRemove.push(arrayComponents.shift())
     lastX = window.innerWidth
 }
@@ -33,7 +43,7 @@ function checkSpaceBigger(comp1: HTMLElement, comp2: HTMLElement) {
         comp1.classList.remove('dd-show-more')
         arrayComponents.unshift(arrayRemove.pop())
         lastX = window.innerWidth
-        if (dropAdds.childElementCount === 0) {
+        if (dropAdds.childElementCount < 1) {
             showMore.style.display = "none";
         }
     }
@@ -42,8 +52,11 @@ function checkSpaceBigger(comp1: HTMLElement, comp2: HTMLElement) {
 // picking the right function depends on window size changes
 function nextMove() {
     // to compare if changing to larger or smaller screen
-    let currentWindowWidth : number = window.innerWidth
-    if (currentWindowWidth <= lastX) {
+    let currentWindowWidth: number = window.innerWidth
+    if (currentWindowWidth>1200){
+        return
+    }
+    else if (currentWindowWidth <= lastX) {
         while (arrayComponents.length > 1) {
             let currentComp: HTMLElement = arrayComponents[0]
             const space: number = window.innerWidth - currentComp.offsetLeft
@@ -64,6 +77,53 @@ function nextMove() {
     }
 }
 
+component1.addEventListener('mouseenter', e => {
+    if (arrayComponents.indexOf(component1) > -1) {
+        comp1Drop.classList.remove("fade-out-top")
+        comp1Drop.classList.add("fade-in-top")
+    }
+    else {
+        comp1Drop.style.opacity = "1";
+    }
+})
+component1.addEventListener('mouseleave', e => {
+    if (arrayComponents.indexOf(component1) > -1) {
+        comp1Drop.classList.remove("fade-in-top")
+        comp1Drop.classList.add("fade-out-top")
+    }
+    else {
+        comp1Drop.style.opacity = "1";
+    }
+})
+
+component4.addEventListener('mouseenter', e => {
+    if (arrayComponents.indexOf(component4) > -1) {
+        comp4Drop.classList.remove("fade-out-top")
+        comp4Drop.classList.add("fade-in-top")
+    }
+    else {
+        comp4Drop.style.opacity = "1";
+    }
+})
+component4.addEventListener('mouseleave', e => {
+    if (arrayComponents.indexOf(component4) > -1) {
+        comp4Drop.classList.remove("fade-in-top")
+        comp4Drop.classList.add("fade-out-top")
+    }
+    else {
+        comp4Drop.style.opacity = "1";
+    }
+})
+
+showMore.addEventListener('mouseenter', e => {
+    dropAdds.classList.remove("fade-out-top")
+    dropAdds.classList.add("fade-in-top")
+})
+showMore.addEventListener('mouseleave', e => {
+    dropAdds.classList.remove("fade-in-top")
+    dropAdds.classList.add("fade-out-top")
+})
+
 // checking if mobile 
 let isMobile: boolean = false;
 // device detection
@@ -79,7 +139,26 @@ if (isMobile) {
         dropAdds.appendChild(arrayComponents[i])
         arrayComponents[i].classList.add('dd-show-more')
     }
+
+    showMore.addEventListener('mouseenter', e => {
+        dropAdds.classList.remove("slide-out-left")
+        dropAdds.classList.add("slide-in-left")
+    })
+    showMore.addEventListener('mouseleave', e => {
+        dropAdds.classList.remove("slide-in-left")
+        dropAdds.classList.add("slide-out-left")
+    })
 }
+
+const font2 = document.getElementById('font-second')!
+showMore.addEventListener('mouseenter', e => {
+    font2.classList.remove("fa-sort-amount-up-alt")
+    font2.classList.add("fa-sort-amount-down-alt")
+})
+showMore.addEventListener('mouseleave', e => {
+    font2.classList.remove("fa-sort-amount-down-alt")
+    font2.classList.add("fa-sort-amount-up-alt")
+})
 
 // detection of window size changes
 window.onresize = nextMove

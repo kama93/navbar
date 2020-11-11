@@ -26,10 +26,12 @@ function checkSpaceSmaller(comp1: HTMLElement) {
     dropAdds.insertAdjacentElement('afterbegin', comp1)
     comp1.classList.add('dd-show-more')
     if (comp1 === component4) {
-        comp4Drop.classList.remove('fade-out-top')
+        comp4Drop.style.opacity = "1";
+        comp4Drop.classList.remove("fade-out-top")
     }
     else if (comp1 === component1) {
-        comp1Drop.classList.remove('fade-out-top')
+        comp1Drop.style.opacity = "1";
+        comp1Drop.classList.remove("fade-out-top")
     }
     arrayRemove.push(arrayComponents.shift())
     lastX = window.innerWidth
@@ -46,6 +48,12 @@ function checkSpaceBigger(comp1: HTMLElement, comp2: HTMLElement) {
         if (dropAdds.childElementCount < 1) {
             showMore.style.display = "none";
         }
+    }
+    if (comp1 === component4) {
+        comp4Drop.style.opacity = "0";
+    }
+    if (comp1 === component1) {
+        comp1Drop.style.opacity = "0";
     }
 }
 
@@ -139,6 +147,11 @@ if (isMobile) {
         dropAdds.appendChild(arrayComponents[i])
         arrayComponents[i].classList.add('dd-show-more')
     }
+    dropAdds.classList.remove("fade-in-top", "fade-out-top")
+    comp1Drop.classList.remove("fade-in-top", "fade-out-top")
+    comp4Drop.classList.remove("fade-in-top", "fade-out-top")
+    comp1Drop.style.opacity = "1";
+    comp4Drop.style.opacity = "1";
 
     showMore.addEventListener('mouseenter', e => {
         dropAdds.classList.remove("slide-out-left")

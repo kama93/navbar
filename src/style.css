@@ -15,6 +15,9 @@ body {
   box-shadow: 0px 1px 9px 1px rgba(0,0,0,0.2);
 }
 
+.background-pre{
+  display: none
+}
 .topnav a {
   color: #aca4a4;
   text-align: center;
@@ -209,11 +212,24 @@ div, a , button, span{
     transition:  0.5s;
     height: 100%;
     position: fixed;
-    z-index: 1;
+    z-index: 999;
     width: 200px;
     left:0;
     opacity: 0;
 }
+.background{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0,0,0,0.0);
+  transition: all 0.5s;
+}
+
+.background-visible{
+  background-color: rgba(0,0,0,0.2);
+}
+
 .slide-in-left {
 	-webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;

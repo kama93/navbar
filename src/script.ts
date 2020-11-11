@@ -4,13 +4,16 @@ const component3: HTMLElement | null = document.getElementById('comp3');
 const component2: HTMLElement | null = document.getElementById('comp2');
 const component: HTMLElement | null = document.getElementById('comp');
 const component1 = document.getElementById('comp1')!;
-const comp1Drop = document.getElementById('comp1-drop')!;
 const component4 = document.getElementById('comp4')!;
-const comp4Drop = document.getElementById('comp4-drop')!;
-const dropDown = document.getElementsByClassName('dropdown')
 const showMore = document.getElementById('show-more')!;
+
+const comp1Drop = document.getElementById('comp1-drop')!;
+const comp4Drop = document.getElementById('comp4-drop')!;
 const dropAdds = document.getElementById('drop-adds')!;
+
+const dropDown = document.getElementsByClassName('dropdown')
 const mainMenu = document.getElementById('main-menu')!;
+const font2 = document.getElementById('font-second')!
 const background = document.getElementById('background')!;
 const buttonShowMore = document.getElementById('button-show-more')!;
 
@@ -86,6 +89,7 @@ function nextMove() {
     }
 }
 
+// eventListner for fade animation
 function addMouseEvents(component: HTMLElement, drop: HTMLElement) {
     component.addEventListener('mouseenter', e => {
         if (arrayComponents.indexOf(component) > -1) {
@@ -140,26 +144,28 @@ if (isMobile) {
     comp1Drop.style.opacity = "1";
     comp4Drop.style.opacity = "1";
 
-
-
-
+    // eventListner for slide in/ out on mibile view
     showMore.addEventListener('click', e => {
         if (!isClicked) {
             dropAdds.classList.remove("slide-out-left");
             dropAdds.classList.add("slide-in-left");
             background.classList.add('background-visible');
+            font2.classList.remove("fa-sort-amount-up-alt");
+            font2.classList.add("fa-sort-amount-down-alt");
             isClicked = true
         }
         else {
             dropAdds.classList.remove("slide-in-left");
             dropAdds.classList.add("slide-out-left");
             background.classList.remove('background-visible');
+            font2.classList.remove("fa-sort-amount-down-alt");
+            font2.classList.add("fa-sort-amount-up-alt");
             isClicked = false
         }
     })
 }
 
-const font2 = document.getElementById('font-second')!
+// eventListner for small arrow near Show More 
 showMore.addEventListener('mouseenter', e => {
     font2.classList.remove("fa-sort-amount-up-alt")
     font2.classList.add("fa-sort-amount-down-alt")

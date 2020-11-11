@@ -4,13 +4,14 @@ var component3 = document.getElementById('comp3');
 var component2 = document.getElementById('comp2');
 var component = document.getElementById('comp');
 var component1 = document.getElementById('comp1');
-var comp1Drop = document.getElementById('comp1-drop');
 var component4 = document.getElementById('comp4');
-var comp4Drop = document.getElementById('comp4-drop');
-var dropDown = document.getElementsByClassName('dropdown');
 var showMore = document.getElementById('show-more');
+var comp1Drop = document.getElementById('comp1-drop');
+var comp4Drop = document.getElementById('comp4-drop');
 var dropAdds = document.getElementById('drop-adds');
+var dropDown = document.getElementsByClassName('dropdown');
 var mainMenu = document.getElementById('main-menu');
+var font2 = document.getElementById('font-second');
 var background = document.getElementById('background');
 var buttonShowMore = document.getElementById('button-show-more');
 var arrayComponents = [];
@@ -81,6 +82,7 @@ function nextMove() {
         }
     }
 }
+// eventListner for fade animation
 function addMouseEvents(component, drop) {
     component.addEventListener('mouseenter', function (e) {
         if (arrayComponents.indexOf(component) > -1) {
@@ -131,22 +133,27 @@ if (isMobile) {
     comp4Drop.classList.remove("fade-in-top", "fade-out-top");
     comp1Drop.style.opacity = "1";
     comp4Drop.style.opacity = "1";
+    // eventListner for slide in/ out on mibile view
     showMore.addEventListener('click', function (e) {
         if (!isClicked) {
             dropAdds.classList.remove("slide-out-left");
             dropAdds.classList.add("slide-in-left");
             background.classList.add('background-visible');
+            font2.classList.remove("fa-sort-amount-up-alt");
+            font2.classList.add("fa-sort-amount-down-alt");
             isClicked = true;
         }
         else {
             dropAdds.classList.remove("slide-in-left");
             dropAdds.classList.add("slide-out-left");
             background.classList.remove('background-visible');
+            font2.classList.remove("fa-sort-amount-down-alt");
+            font2.classList.add("fa-sort-amount-up-alt");
             isClicked = false;
         }
     });
 }
-var font2 = document.getElementById('font-second');
+// eventListner for small arrow near Show More 
 showMore.addEventListener('mouseenter', function (e) {
     font2.classList.remove("fa-sort-amount-up-alt");
     font2.classList.add("fa-sort-amount-down-alt");
